@@ -1,0 +1,6 @@
+{
+  "minVersion": "0.7.0",
+  "paywallEnabled": true,
+  "cloudBackupEnabled": true,
+  "noticeMessage": ""
+}
