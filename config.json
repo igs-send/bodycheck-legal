@@ -2,7 +2,7 @@
   "minVersion": "0.7.1",
   "minSupportedVersion": "0.7.0",
   "minSupportedVersionAndroid": "0.0.0",
-  "minSupportedVersionIos": "0.0.0",
+  "minSupportedVersionIos": "0.7.2",
   "paywallEnabled": true,
   "cloudBackupEnabled": true,
   "noticeMessage": ""
