@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>Body Check — Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for the Body Check health-tracking app.">
+  <style>
+    :root {
+      --bg: #FAF8F5;
+      --surface: #FFFFFF;
+      --ink: #1A1A18;
+      --ink-soft: #5C5C56;
+      --accent: #C8973A;
+      --accent-light: #F5EDD8;
+      --green-bg: #EDF7ED;
+      --green-ink: #2D7A2D;
+      --border: #E8E4DC;
+      --radius: 12px;
+      --font-body: Georgia, 'Times New Roman', serif;
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+
+    .logo-icon { background: transparent; border: 1px solid var(--border); object-fit: cover; }
+
+    .logo-name {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 42px);
+      font-weight: normal;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin-bottom: 36px;
+    }
+
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 20px;
+      margin-bottom: 36px;
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+
+    .callout strong.label {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+    }
+
+    .summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-bottom: 44px;
+    }
+    .summary h2 {
+      border: none;
+      padding: 0;
+      margin-bottom: 12px;
+    }
+    .summary ul { margin: 0; padding-left: 20px; }
+    .summary li { margin-bottom: 7px; font-size: 15.5px; }
+    .summary li:last-child { margin-bottom: 0; }
+
+    section { margin-bottom: 38px; }
+
+    h2 {
+      font-family: var(--font-ui);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p { margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    ul { margin: 10px 0 14px; padding-left: 22px; }
+    li { margin-bottom: 7px; }
+
+    code {
+      font-family: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.86em;
+      background: var(--accent-light);
+      color: #8a6620;
+      padding: 1px 6px;
+      border-radius: 5px;
+    }
+
+    .table-wrap { overflow-x: auto; margin: 16px 0; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      min-width: 460px;
+    }
+
+    th {
+      font-family: var(--font-ui);
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      text-align: left;
+      padding: 9px 12px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 600;
+      white-space: nowrap;
+      padding: 2px 9px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      color: #8a6620;
+    }
+    .tag.you { background: var(--green-bg); color: var(--green-ink); }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .right-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .right-card .icon { font-size: 22px; margin-bottom: 8px; }
+    .right-card h3 {
+      font-family: var(--font-ui);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .right-card p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+
+    .contact-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin-top: 4px;
+    }
+    .contact-block .email {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .contact-block .fine { font-size: 14px; color: var(--ink-soft); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 26px 24px;
+      text-align: center;
+      font-family: var(--font-ui);
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    footer a { font-weight: 500; }
+
+    @media (max-width: 480px) {
+      body { font-size: 16px; }
+      main { padding: 32px 18px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo-icon" src="icon.png" alt="Body Check" width="32" height="32">
+  <span class="logo-name">Body Check</span>
+</header>
+
+<main>
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: 15 June 2026 &nbsp;·&nbsp; Body Check app &nbsp;·&nbsp; Package <code>io.bodycheck.app</code></p>
+
+  <div class="callout">
+    <strong class="label">Not a medical device</strong>
+    Body Check is a personal health-tracking tool. It is not a medical device, does not diagnose conditions, and does not replace professional medical advice. Everything you record is for your own personal use.
+  </div>
+
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>We run no servers of our own and never receive your health data.</li>
+      <li>Your entries stay on your device. A backup, if you create one, goes to <strong>your own</strong> Google Drive.</li>
+      <li>Payments are handled entirely by Google Play or the App Store. We never see your card details.</li>
+      <li>Crash reports are anonymous. Usage analytics are collected <strong>only if you opt in</strong>, and you can withdraw consent at any time.</li>
+      <li>You can export or delete all of your data yourself, at any time.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>Who we are</h2>
+    <p>Body Check is developed and operated by an independent developer based in the European Union. Because the developer is established in the EU, this policy is written to comply with the EU General Data Protection Regulation (GDPR).</p>
+    <p>We do not operate our own servers and we do not store your data on our side. Everything described below happens either on your device or inside cloud storage that belongs to you.</p>
+  </section>
+
+  <section>
+    <h2>What data is involved, and where it lives</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Where it is stored</th>
+            <th>Who can access it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Health entries (body map, organs, symptoms, teeth, tests, health budget, diary)</td>
+            <td>On your device only</td>
+            <td><span class="tag you">You only</span></td>
+          </tr>
+          <tr>
+            <td>Backup snapshot (if you enable backup)</td>
+            <td>Your personal Google Drive (created via Google Sign-In)</td>
+            <td><span class="tag you">You only</span></td>
+          </tr>
+          <tr>
+            <td>Anonymous install identifier (<code>installId</code>)</td>
+            <td>On your device; never included in a backup</td>
+            <td><span class="tag you">You only</span></td>
+          </tr>
+          <tr>
+            <td>Subscription status</td>
+            <td>RevenueCat (the app store is the source of truth)</td>
+            <td><span class="tag">RevenueCat</span></td>
+          </tr>
+          <tr>
+            <td>Crash reports (anonymous, no personal or health data)</td>
+            <td>Crash-reporting provider</td>
+            <td><span class="tag">Provider</span></td>
+          </tr>
+          <tr>
+            <td>Usage analytics — only after you opt in</td>
+            <td>Analytics provider</td>
+            <td><span class="tag">Provider</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Your health data never leaves your device except in one situation: when you choose to create a backup to your own cloud storage. We cannot see, receive, or read the contents of that backup.</p>
+  </section>
+
+  <section>
+    <h2>Backups to your own cloud</h2>
+    <p>The backup feature stores a snapshot of your data inside a cloud account that belongs to you. We never hold a copy.</p>
+    <ul>
+      <li><strong>Google Drive.</strong> Cloud backup uses Google Sign-In and the Google Drive API with the restricted <code>drive.file</code> scope. This means the app can only see files it created itself; it has no access to the rest of your Drive. The snapshot is saved in a visible folder named “Body Check”, and you can delete it at any time directly in Google Drive.</li>
+    </ul>
+    <p>The backup is a snapshot, not a live sync, and it is controlled entirely by you. You can also export and import your data as a local file without any cloud account at all.</p>
+  </section>
+
+  <section>
+    <h2>Subscriptions and payments</h2>
+    <p>Payments are processed entirely by Google Play or the Apple App Store. We never see or store your payment-card details.</p>
+    <p>Subscription entitlements are managed through RevenueCat, which stores purchase-status information linked to an anonymous app-store identifier — never to your health data. The app store remains the source of truth for your subscription. See the <a href="https://www.revenuecat.com/privacy" rel="noopener" target="_blank">RevenueCat Privacy Policy</a> for details.</p>
+  </section>
+
+  <section>
+    <h2>Crash reporting</h2>
+    <p>When the app crashes, an anonymous crash report may be sent to help us fix the problem. A report contains technical information such as the error type, app version, and device platform. Personal data and health data are stripped out and are never included in crash reports.</p>
+  </section>
+
+  <section>
+    <h2>Usage analytics (opt-in only)</h2>
+    <p>Usage analytics are <strong>off by default</strong>. They are collected only after you give explicit consent at first launch. Until you opt in, no analytics events are sent at all.</p>
+    <p>If you opt in, the analytics we collect are limited to anonymous product-usage events (for example, which screens are opened) tied to an anonymous identifier — never to the content of your health entries. You can withdraw your consent at any time in the app’s Settings, and collection stops immediately.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>Body Check is not directed at children under 16. We do not knowingly collect data from children. If you believe a child has used the app, please contact us and we will help.</p>
+  </section>
+
+  <section>
+    <h2>Your rights under GDPR</h2>
+    <p>Because your data lives on your own device and in your own cloud, you are in direct control of it. You can exercise the following rights yourself, at any time:</p>
+    <div class="rights-grid">
+      <div class="right-card">
+        <div class="icon">📤</div>
+        <h3>Access &amp; portability</h3>
+        <p>Export all of your data to a file from the app’s menu.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">✏️</div>
+        <h3>Rectification</h3>
+        <p>Edit or correct any entry directly in the app.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🗑️</div>
+        <h3>Erasure</h3>
+        <p>Delete the app to remove all local data; delete your cloud backup from Google Drive.</p>
+      </div>
+      <div class="right-card">
+        <div class="icon">🚫</div>
+        <h3>Withdraw consent</h3>
+        <p>Turn analytics off in Settings at any time.</p>
+      </div>
+    </div>
+    <p style="margin-top:18px">For any request that cannot be handled inside the app, contact us at the address below. We aim to respond within 30 days. You also have the right to lodge a complaint with your local data-protection authority.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If we make material changes, we will notify you within the app and update the effective date at the top of this page. Continuing to use the app after a change takes effect means you accept the updated policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="contact-block">
+      <p>For privacy questions or to exercise your GDPR rights:</p>
+      <p class="email"><a href="mailto:app.bodycheck@gmail.com">app.bodycheck@gmail.com</a></p>
+      <p class="fine">The developer is based in the European Union. We respond to requests within 30 calendar days.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a>
+  <br><br>© 2026 Body Check
+</footer>
+
+</body>
+</html>
