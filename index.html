@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="icon.png">
   <link rel="apple-touch-icon" href="icon.png">
-  <title>Body Check — Your health, mapped</title>
-  <meta name="description" content="Body Check is a private, offline health diary built around a visual body map. Track symptoms, pain, mood, teeth and more — no account needed.">
+  <title>AquiLink — small software from Portugal</title>
+  <meta name="description" content="AquiLink is an independent software studio based in Figueira da Foz, Portugal. We build Body Check, a private health diary, and the AquiLink bot for local micro-businesses.">
+  <meta property="og:title" content="AquiLink — small software from Portugal">
+  <meta property="og:description" content="An independent software studio in Figueira da Foz, Portugal.">
+  <meta property="og:type" content="website">
   <style>
     :root {
       --bg: #FAF8F5;
@@ -34,6 +37,7 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
+
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -41,19 +45,22 @@
       display: flex; align-items: center; gap: 10px;
       position: sticky; top: 0; z-index: 10;
     }
-    .logo-icon {
-      width: 32px; height: 32px;
-      background: var(--accent); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center; flex: none;
-    }
-    .logo-icon { background: transparent; border: 1px solid var(--border); object-fit: cover; }
+    .logo-mark { height: 19px; width: auto; display: block; flex: none; }
     .logo-name {
       font-family: var(--font-ui);
       font-size: 15px; font-weight: 600; letter-spacing: -0.2px;
     }
+    header nav {
+      margin-left: auto; display: flex; gap: 20px;
+      font-family: var(--font-ui); font-size: 13.5px; font-weight: 500;
+    }
+    header nav a { color: var(--ink-soft); }
+    header nav a:hover { color: var(--accent); text-decoration: none; }
+
     main { max-width: 760px; margin: 0 auto; padding: 24px 24px 80px; }
 
-    .hero { text-align: center; padding: 56px 0 44px; }
+    .hero { text-align: center; padding: 60px 0 48px; }
+    .hero-mark { height: 40px; width: auto; display: block; margin: 0 auto 26px; max-width: 82%; }
     .eyebrow {
       font-family: var(--font-ui);
       font-size: 12px; font-weight: 600;
@@ -61,28 +68,16 @@
       color: var(--accent); margin-bottom: 14px;
     }
     h1 {
-      font-size: clamp(34px, 6vw, 52px);
-      font-weight: normal; line-height: 1.1;
+      font-size: clamp(32px, 5.4vw, 46px);
+      font-weight: normal; line-height: 1.15;
       letter-spacing: -0.5px; margin-bottom: 18px;
     }
     .lede {
       font-size: 19px; color: var(--ink-soft);
-      max-width: 540px; margin: 0 auto 30px;
+      max-width: 560px; margin: 0 auto;
     }
-    .cta-row {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
-    }
-    .btn {
-      font-family: var(--font-ui);
-      font-size: 15px; font-weight: 600;
-      padding: 13px 26px; border-radius: 30px;
-      background: var(--accent); color: #fff;
-      border: 1px solid var(--accent);
-    }
-    .btn:hover { text-decoration: none; opacity: 0.92; }
-    .btn.secondary { background: transparent; color: var(--accent); }
 
-    section { margin-bottom: 44px; }
+    section { margin-bottom: 48px; }
     h2 {
       font-family: var(--font-ui);
       font-size: 13px; font-weight: 700;
@@ -90,170 +85,148 @@
       color: var(--accent); margin-bottom: 18px;
       padding-bottom: 10px; border-bottom: 1px solid var(--border);
     }
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-    .card {
+
+    .product {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px 20px;
+      padding: 26px 26px 24px;
+      margin-bottom: 16px;
+      display: flex; gap: 20px; align-items: flex-start;
     }
-    .card { position: relative; }
-    .card .icon {
-      width: 40px; height: 40px; margin-bottom: 12px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--accent-light); border-radius: 10px;
+    .product img.thumb {
+      width: 56px; height: 56px; border-radius: 14px;
+      border: 1px solid var(--border); flex: none;
     }
-    .card .icon svg { width: 22px; height: 22px; display: block; }
-    .card .icon img { width: 28px; height: 28px; display: block; }
-    .premium-badge { position: absolute; top: 14px; right: 14px; width: 17px; height: 17px; }
-    .premium-badge svg { width: 100%; height: 100%; display: block; }
-    .hero-icon {
-      width: 88px; height: 88px; border-radius: 20px;
-      display: block; margin: 0 auto 22px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08); border: 1px solid var(--border);
-    }
-    .card h3 {
+    .product .body { flex: 1; min-width: 0; }
+    .product h3 {
       font-family: var(--font-ui);
-      font-size: 15px; font-weight: 600; margin-bottom: 6px;
+      font-size: 17px; font-weight: 600; letter-spacing: -0.2px;
+      margin-bottom: 4px;
     }
-    .card p { font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+    .product .tag {
+      font-family: var(--font-ui);
+      font-size: 11.5px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--ink-soft); margin-bottom: 10px; display: block;
+    }
+    .product p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; }
+    .product .links {
+      font-family: var(--font-ui); font-size: 14px; font-weight: 600;
+      display: flex; gap: 18px; flex-wrap: wrap;
+    }
 
-    .privacy-note {
-      background: var(--green-bg);
-      border-left: 3px solid var(--green-ink);
-      border-radius: 0 var(--radius) var(--radius) 0;
-      padding: 18px 22px; font-size: 15.5px; line-height: 1.6;
+    .also {
+      font-size: 15px; color: var(--ink-soft);
+      line-height: 1.6; margin-top: 18px; padding-left: 2px;
     }
-    .privacy-note strong.label {
+    .about p { margin-bottom: 16px; }
+    .about p:last-child { margin-bottom: 0; }
+
+    .contact-box {
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      font-size: 16px;
+    }
+    .contact-box .label {
       display: block; font-family: var(--font-ui);
       font-size: 12.5px; font-weight: 700;
       letter-spacing: 0.05em; text-transform: uppercase;
-      color: var(--green-ink); margin-bottom: 5px;
+      color: var(--accent); margin-bottom: 6px;
     }
-    .disclaimer {
-      font-family: var(--font-ui);
-      font-size: 13.5px; color: var(--ink-soft);
-      text-align: center; max-width: 560px; margin: 0 auto;
-    }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     footer {
       border-top: 1px solid var(--border);
-      padding: 26px 24px; text-align: center;
+      padding: 30px 24px 44px; text-align: center;
       font-family: var(--font-ui); font-size: 13px; color: var(--ink-soft);
     }
     footer a { font-weight: 500; }
+    .legal-block {
+      font-size: 12.5px; line-height: 1.7;
+      color: var(--ink-soft); margin-top: 20px;
+    }
+    .legal-block strong { color: var(--ink); font-weight: 600; }
+
     @media (max-width: 480px) {
       body { font-size: 16px; }
       main { padding: 12px 18px 60px; }
-      .hero { padding: 36px 0 32px; }
+      .hero { padding: 38px 0 34px; }
+      .product { flex-direction: column; gap: 14px; }
+      header nav { gap: 14px; font-size: 13px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img class="logo-icon" src="icon.png" alt="Body Check" width="32" height="32">
-  <span class="logo-name">Body Check</span>
+  <img class="logo-mark" src="aquilink-logo.svg" alt="AquiLink">
+  <nav>
+    <a href="#products">Products</a>
+    <a href="bot.html">Bot</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main>
-  <div class="hero">
-    <img class="hero-icon" src="icon.png" alt="Body Check app icon">
-    <div class="eyebrow">Health diary &amp; body map</div>
-    <h1>Your health, mapped.</h1>
-    <p class="lede">Body Check is a private, offline health diary built around a visual body map. Note how you feel and see it right on your body — no account needed.</p>
-    <div class="cta-row">
-      <!-- ================================================================= -->
-      <!-- TODO BEFORE LAUNCH: replace REPLACE_WITH_APP_STORE_URL below with   -->
-      <!-- your real App Store link once the app is live. Example:            -->
-      <!--   https://apps.apple.com/app/id6785216147                          -->
-      <!-- ================================================================= -->
-      <a class="btn" href="REPLACE_WITH_APP_STORE_URL" rel="noopener">Download on the App Store</a>
 
-      <!-- ================================================================= -->
-      <!-- TODO BEFORE LAUNCH: replace REPLACE_WITH_GOOGLE_PLAY_URL below with -->
-      <!-- your real Google Play link once the app is live. Example:          -->
-      <!--   https://play.google.com/store/apps/details?id=io.bodycheck.app   -->
-      <!-- ================================================================= -->
-      <a class="btn secondary" href="REPLACE_WITH_GOOGLE_PLAY_URL" rel="noopener">Get it on Google Play</a>
-    </div>
+  <div class="hero">
+    <img class="hero-mark" src="aquilink-logo.svg" alt="AquiLink">
+    <div class="eyebrow">Independent software studio · Portugal</div>
+    <h1>Small software, made carefully.</h1>
+    <p class="lede">AquiLink is a small independent studio in Figueira da Foz, Portugal. We build Body Check — a private health diary that keeps your records on your own device and asks for nothing in return.</p>
   </div>
 
-  <section>
-    <h2>What you can do</h2>
-    <div class="feature-grid">
-      <div class="card">
-        <div class="icon"><img src="vitruvian.png" alt="Body map"></div>
-        <h3>Visual body map</h3>
-        <p>Tap any area of the body to log what's going on, right where you feel it.</p>
+  <section id="products">
+    <h2>What we build</h2>
+
+    <div class="product">
+      <img class="thumb" src="icon.png" alt="Body Check">
+      <div class="body">
+        <h3>Body Check</h3>
+        <span class="tag">Mobile app · iOS &amp; Android</span>
+        <p>A private health diary built around a visual body map. Mark where it hurts, keep a record of symptoms, teeth, mood and spending, and bring a clear summary to your next appointment. Works offline, no account needed.</p>
+        <div class="links">
+          <a href="bodycheck.html">About Body Check →</a>
+          <a href="support.html">Support</a>
+        </div>
       </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="14" height="18" rx="2"/><line x1="2" y1="7" x2="4" y2="7"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="2" y1="17" x2="4" y2="17"/><line x1="8" y1="7" x2="14" y2="7"/><line x1="8" y1="12" x2="14" y2="12"/><line x1="8" y1="17" x2="11" y2="17"/></svg></div>
-        <h3>Symptom &amp; mood diary</h3>
-        <p>Track symptoms, pain and mood over time, with notes in your own words.</p>
-      </div>
-      <div class="card">
-        <div class="premium-badge" title="Premium feature"><svg viewBox="150 30 88 106" xmlns="http://www.w3.org/2000/svg"><path d="m 197.55852,34.44036 c 0.003,23.630723 2.16901,30.930478 4.741,36.989519 7.88737,4.05088 13.67916,5.366815 30.91684,9.631493 -13.42274,2.000183 -22.69863,3.565448 -29.66531,9.349642 -1.02016,10.465876 3.26217,29.088726 3.80387,37.885776 -6.6207,-11.88134 -12.49601,-21.39139 -19.48894,-25.98928 -10.21589,4.52634 -18.26765,13.36232 -26.93047,18.35787 5.17229,-9.44708 16.67478,-22.014667 19.23638,-32.224389 -3.99052,-8.32485 -21.77281,-13.410755 -30.34725,-17.470161 13.2794,0.823493 26.37662,0.520057 35.26382,-2.051026 3.33866,-2.617899 5.61602,-11.133736 12.47006,-34.479444 z" fill="#C8973A"/></svg></div>
-        <div class="icon"><svg viewBox="-0.5 0 14 17.5" fill="none" stroke="#C8973A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10 1.5 C8.6 1.5 7.8 2.3 6.5 3.1 C5.2 2.3 4.4 1.5 3 1.5 C1.4 1.5 0 2.8 0 4.6 C0 6.2 0.6 7.6 1.5 8.7 C2.1 9.4 2.4 10.1 2.5 11 L3.1 15 C3.2 15.8 3.6 16.2 4.1 16.2 C4.6 16.2 5 15.8 5.1 15 L5.6 12.2 C5.7 11.4 6 11 6.5 11 C7 11 7.3 11.4 7.4 12.2 L7.9 15 C8 15.8 8.4 16.2 8.9 16.2 C9.4 16.2 9.8 15.8 9.9 15 L10.5 11 C10.6 10.1 10.9 9.4 11.5 8.7 C12.4 7.6 13 6.2 13 4.6 C13 2.8 11.6 1.5 10 1.5 Z"/></svg></div>
-        <h3>Teeth tracking</h3>
-        <p>Keep a dental map — cavities, care and notes for each tooth.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="3.2" rx="1"/><path d="M8.4 12.5l2.3 2.3 4.5-4.6"/></svg></div>
-        <h3>Self-tests</h3>
-        <p>Built-in questionnaires to check in on how you're doing and track it over time.</p>
-      </div>
-      <div class="card">
-        <div class="premium-badge" title="Premium feature"><svg viewBox="150 30 88 106" xmlns="http://www.w3.org/2000/svg"><path d="m 197.55852,34.44036 c 0.003,23.630723 2.16901,30.930478 4.741,36.989519 7.88737,4.05088 13.67916,5.366815 30.91684,9.631493 -13.42274,2.000183 -22.69863,3.565448 -29.66531,9.349642 -1.02016,10.465876 3.26217,29.088726 3.80387,37.885776 -6.6207,-11.88134 -12.49601,-21.39139 -19.48894,-25.98928 -10.21589,4.52634 -18.26765,13.36232 -26.93047,18.35787 5.17229,-9.44708 16.67478,-22.014667 19.23638,-32.224389 -3.99052,-8.32485 -21.77281,-13.410755 -30.34725,-17.470161 13.2794,0.823493 26.37662,0.520057 35.26382,-2.051026 3.33866,-2.617899 5.61602,-11.133736 12.47006,-34.479444 z" fill="#C8973A"/></svg></div>
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"/><path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 16 6 6"/><path d="M16 7a2.9 2.9 0 1 0 0 5.8A2.9 2.9 0 0 0 16 7z"/><path d="M6 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></div>
-        <h3>Health budget</h3>
-        <p>Log what you spend on your health and keep it all in one place.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
-        <h3>Notes &amp; files</h3>
-        <p>Attach photos and documents to your entries so everything is together.</p>
-      </div>
-      <div class="card">
-        <div class="premium-badge" title="Premium feature"><svg viewBox="150 30 88 106" xmlns="http://www.w3.org/2000/svg"><path d="m 197.55852,34.44036 c 0.003,23.630723 2.16901,30.930478 4.741,36.989519 7.88737,4.05088 13.67916,5.366815 30.91684,9.631493 -13.42274,2.000183 -22.69863,3.565448 -29.66531,9.349642 -1.02016,10.465876 3.26217,29.088726 3.80387,37.885776 -6.6207,-11.88134 -12.49601,-21.39139 -19.48894,-25.98928 -10.21589,4.52634 -18.26765,13.36232 -26.93047,18.35787 5.17229,-9.44708 16.67478,-22.014667 19.23638,-32.224389 -3.99052,-8.32485 -21.77281,-13.410755 -30.34725,-17.470161 13.2794,0.823493 26.37662,0.520057 35.26382,-2.051026 3.33866,-2.617899 5.61602,-11.133736 12.47006,-34.479444 z" fill="#C8973A"/></svg></div>
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg></div>
-        <h3>Clear summaries</h3>
-        <p>Generate a clear summary of your history before you visit a specialist.</p>
-      </div>
-      <div class="card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8973A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg></div>
-        <h3>Reminders &amp; streaks</h3>
-        <p>Gentle reminders, streaks and rewards help you make it a daily habit.</p>
-      </div>
+    </div>
+
+    <p class="also">Also from AquiLink: the <a href="bot.html">AquiLink bot</a> — an open directory of local micro-businesses in Portugal, running on Telegram since 2023.</p>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About</h2>
+    <p>AquiLink started in 2023 with a small Telegram bot that put local Portuguese businesses on the map, incubated at <a href="https://vilawork.pt/" rel="noopener">VilaWork</a>. The idea behind it was that useful software does not have to be big, and that the people it serves should not have to hand over much to use it.</p>
+    <p>Body Check is where that thinking went next, and it is what the studio works on today. Health apps tend to ask for an account, a subscription and your data before they give you anything back. We wanted the opposite — something that works the moment you open it, keeps your records on your own device, and asks for nothing.</p>
+    <p>We are a small team, and we like it that way — it keeps the work close to the people who use it. AquiLink is based and registered in Figueira da Foz, Portugal.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <span class="label">Get in touch</span>
+      Support, questions and partnerships: <a href="mailto:support@aquilink.eu">support@aquilink.eu</a><br>
+      We read everything and usually reply within two business days.
     </div>
   </section>
 
-  <section>
-    <div class="privacy-note">
-      <strong class="label">Private by design</strong>
-      Your entries stay on your device. We run no servers of our own and never receive your health data. Back up privately to your own Google Drive, or export a local file — you're always in control.
-    </div>
-  </section>
-
-  <section>
-    <h2>Free to use</h2>
-    <p>Body Check is free to download and use. Some advanced features — such as extra file attachments, clear doctor summaries, full teeth history, the health budget and cloud backup — are part of an optional premium.</p>
-  </section>
-
-  <section>
-    <p class="disclaimer">Body Check is a personal health-tracking tool. It is not a medical device, does not diagnose conditions, and does not replace professional medical advice.</p>
-  </section>
 </main>
 
 <footer>
-  <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="support.html">Support</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a>
-  <br><br>Contact: <a href="mailto:app.bodycheck@gmail.com">app.bodycheck@gmail.com</a>
-  <br><br>© 2026 Body Check
+  <a href="bodycheck.html">Body Check</a> &nbsp;·&nbsp; <a href="support.html">Support</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a>
+
+  <div class="legal-block">
+    <strong>AquiLink</strong> — Igor Serdiukov<br>
+    Rua Cardoso Marta, n.º 18, 2.º Esq., 3080-012 Figueira da Foz, Portugal<br>
+    NIF 311241190 · +351 931 992 840 · <a href="mailto:support@aquilink.eu">support@aquilink.eu</a><br>
+    © 2026 AquiLink
+  </div>
 </footer>
 
 </body>
