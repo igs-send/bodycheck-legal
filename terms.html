@@ -53,25 +53,6 @@
       z-index: 10;
     }
 
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: none;
-    }
-    .logo-icon { background: transparent; border: 1px solid var(--border); object-fit: cover; }
-
-    .logo-name {
-      font-family: var(--font-ui);
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: -0.2px;
-    }
-
     main {
       max-width: 700px;
       margin: 0 auto;
@@ -207,9 +188,11 @@
     .brand:hover { text-decoration: none; opacity: .75; }
     .crumb-sep { color: var(--ink-soft); opacity: .5; font-family: var(--font-ui); font-size: 15px; flex: none; }
     .section-label {
+      display: flex; align-items: center; gap: 8px;
       font-family: var(--font-ui); font-size: 16px; font-weight: 600;
       letter-spacing: -0.2px; color: var(--ink); flex: none;
     }
+    .section-label img { border-radius: 6px; border: 1px solid var(--border); display: block; }
     header nav { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap;
       font-family: var(--font-ui); font-size: 14.5px; font-weight: 500; }
     header nav a { color: var(--ink-soft); text-decoration: none; }
@@ -230,7 +213,9 @@
     <img class="logo-mark" src="aquilink-logo.svg" alt="AquiLink">
   </a>
   <span class="crumb-sep">/</span>
-  <span class="section-label">Body Check</span>
+  <span class="section-label">
+    <img src="icon.png" alt="" width="24" height="24">Body Check
+  </span>
   <nav>
     <a href="bodycheck.html">Overview</a>
     <a href="support.html">Support</a>
@@ -242,7 +227,7 @@
 <main>
   <div class="eyebrow">Legal</div>
   <h1>Terms of Service</h1>
-  <p class="meta">Effective date: 15 June 2026 &nbsp;·&nbsp; Body Check app &nbsp;·&nbsp; Package <code style="font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:0.86em;background:var(--accent-light);color:#8a6620;padding:1px 6px;border-radius:5px;">io.bodycheck.app</code></p>
+  <p class="meta">Effective date: 30 July 2026 &nbsp;·&nbsp; Body Check app &nbsp;·&nbsp; Package <code style="font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:0.86em;background:var(--accent-light);color:#8a6620;padding:1px 6px;border-radius:5px;">io.bodycheck.app</code></p>
 
   <div class="callout">
     <strong class="label">Please read this</strong>

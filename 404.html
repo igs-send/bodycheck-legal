@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/bot-icon.jpg">
+  <title>Page not found — AquiLink</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF3ED; --surface: #FFFFFF;
+      --ink: #2A1B38; --ink-soft: #5E5169;
+      --accent: #345EC2; --border: #EAE1D6;
+      --font-body: Georgia, 'Times New Roman', serif;
+      --font-ui: Figtree, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: var(--font-body); font-size: 18.5px; line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh; display: flex; flex-direction: column;
+    }
+    header {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      padding: 18px 24px; display: flex; align-items: center;
+    }
+    .logo-mark { height: 22px; width: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    main {
+      flex: 1; max-width: 560px; margin: 0 auto;
+      padding: 96px 24px; text-align: center;
+    }
+    .code {
+      font-family: var(--font-ui); font-size: 13px; font-weight: 700;
+      letter-spacing: 0.09em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px;
+    }
+    h1 {
+      font-family: var(--font-ui);
+      font-size: clamp(30px, 5vw, 40px); font-weight: 700;
+      letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px;
+    }
+    p { color: var(--ink-soft); margin-bottom: 28px; }
+    .links {
+      font-family: var(--font-ui); font-size: 15px; font-weight: 600;
+      display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+    }
+    footer {
+      border-top: 1px solid var(--border); padding: 26px 24px;
+      text-align: center; font-family: var(--font-ui);
+      font-size: 12.5px; color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img class="logo-mark" src="/aquilink-logo.svg" alt="AquiLink"></a>
+</header>
+
+<main>
+  <div class="code">Error 404</div>
+  <h1>This page moved, or never existed.</h1>
+  <p>Either way, it is not here. Try one of these instead.</p>
+  <div class="links">
+    <a href="/">AquiLink</a>
+    <a href="/bodycheck.html">Body Check</a>
+    <a href="/bot.html">Bot</a>
+    <a href="mailto:support@aquilink.eu">Email us</a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 AquiLink &middot; Figueira da Foz, Portugal
+</footer>
+
+</body>
+</html>

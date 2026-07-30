@@ -51,18 +51,6 @@
       top: 0;
       z-index: 10;
     }
-    .logo-icon {
-      width: 32px; height: 32px;
-      background: var(--accent);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      flex: none;
-    }
-    .logo-icon { background: transparent; border: 1px solid var(--border); object-fit: cover; }
-    .logo-name {
-      font-family: var(--font-ui);
-      font-size: 16.5px; font-weight: 600; letter-spacing: -0.2px;
-    }
     main { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
     .eyebrow {
       font-family: var(--font-ui);
@@ -163,9 +151,11 @@
     .brand:hover { text-decoration: none; opacity: .75; }
     .crumb-sep { color: var(--ink-soft); opacity: .5; font-family: var(--font-ui); font-size: 15px; flex: none; }
     .section-label {
+      display: flex; align-items: center; gap: 8px;
       font-family: var(--font-ui); font-size: 16px; font-weight: 600;
       letter-spacing: -0.2px; color: var(--ink); flex: none;
     }
+    .section-label img { border-radius: 6px; border: 1px solid var(--border); display: block; }
     header nav { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap;
       font-family: var(--font-ui); font-size: 14.5px; font-weight: 500; }
     header nav a { color: var(--ink-soft); text-decoration: none; }
@@ -186,7 +176,9 @@
     <img class="logo-mark" src="aquilink-logo.svg" alt="AquiLink">
   </a>
   <span class="crumb-sep">/</span>
-  <span class="section-label">Body Check</span>
+  <span class="section-label">
+    <img src="icon.png" alt="" width="24" height="24">Body Check
+  </span>
   <nav>
     <a href="bodycheck.html">Overview</a>
     <span class="current">Support</span>
