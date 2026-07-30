@@ -123,10 +123,22 @@
       display: flex; gap: 18px; flex-wrap: wrap;
     }
 
-    .also {
-      font-size: 16px; color: var(--ink-soft);
-      line-height: 1.6; margin-top: 18px; padding-left: 2px;
+    .product.secondary {
+      background: #FDFAF6;
+      padding: 20px 22px;
+      gap: 16px; align-items: flex-start;
+      margin-bottom: 0;
+      opacity: 0.88;
     }
+    .product.secondary:hover { opacity: 1; }
+    .product.secondary img.thumb {
+      width: 44px; height: 44px; border-radius: 12px;
+      border: 1px solid var(--border); flex: none;
+    }
+    .product.secondary h3 { font-size: 15.5px; margin-bottom: 2px; }
+    .product.secondary .tag { font-size: 10.5px; margin-bottom: 6px; }
+    .product.secondary p { font-size: 14.5px; margin-bottom: 8px; }
+    .product.secondary .links { font-size: 13.5px; }
     .about p { margin-bottom: 16px; }
     .about p:last-child { margin-bottom: 0; }
 
@@ -205,7 +217,17 @@
       </div>
     </div>
 
-    <p class="also">Also from AquiLink: the <a href="bot.html">AquiLink bot</a> — an open directory of local micro-businesses in Portugal, running on Telegram since 2023.</p>
+    <div class="product secondary">
+      <img class="thumb" src="bot-icon.jpg" alt="AquiLink Bot">
+      <div class="body">
+        <h3>AquiLink Bot</h3>
+        <span class="tag">Telegram · since 2023</span>
+        <p>An open directory of local micro-businesses in Portugal. Anyone can add a place they like and share it with others.</p>
+        <div class="links">
+          <a href="bot.html">About the bot →</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="about" class="about">
