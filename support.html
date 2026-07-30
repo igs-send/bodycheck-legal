@@ -149,7 +149,15 @@
   
     .logo-mark { height: 22px; width: 93px; display: block; flex: none; }
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; flex: none; }
-    .brand:hover { text-decoration: none; opacity: .75; }
+    a.brand:hover { text-decoration: none; }
+    a.brand .logo-mark { opacity: .55; transition: opacity .15s; }
+    a.brand:hover .logo-mark { opacity: 1; }
+    span.brand .logo-mark { opacity: 1; }
+    a.section-label { color: var(--ink-soft); }
+    a.section-label img { opacity: .7; }
+    a.section-label:hover { color: var(--accent); }
+    a.section-label:hover img { opacity: 1; }
+    span.section-label { color: var(--ink); }
     .crumb-sep { color: var(--ink-soft); opacity: .5; font-family: var(--font-ui); font-size: 15px; flex: none; }
     a.section-label { text-decoration: none; }
     a.section-label:hover { color: var(--accent); text-decoration: none; }
