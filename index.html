@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="icon.png">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="bot-icon.jpg">
+  <link rel="apple-touch-icon" href="bot-icon.jpg">
   <title>AquiLink — small software from Portugal</title>
   <meta name="description" content="AquiLink is an independent software studio based in Figueira da Foz, Portugal. We build Body Check, a private health diary, and the AquiLink bot for local micro-businesses.">
-  <meta property="og:title" content="AquiLink — small software from Portugal">
-  <meta property="og:description" content="An independent software studio in Figueira da Foz, Portugal.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AquiLink">
+  <meta property="og:url" content="https://aquilink.eu/index.html">
+  <meta property="og:title" content="AquiLink — small software from Portugal">
+  <meta property="og:description" content="AquiLink is an independent software studio based in Figueira da Foz, Portugal. We build Body Check, a private health diary, and the AquiLink bot for local micro-businesses.">
+  <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,13 +58,6 @@
       font-family: var(--font-ui);
       font-size: 16.5px; font-weight: 600; letter-spacing: -0.2px;
     }
-    header nav {
-      margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap;
-      font-family: var(--font-ui); font-size: 14.5px; font-weight: 500;
-    }
-    header nav a { color: var(--ink-soft); }
-    header nav a:hover { color: var(--accent); text-decoration: none; }
-    header nav a.current { color: var(--ink); }
 
     main { max-width: 800px; margin: 0 auto; padding: 24px 24px 80px; }
 
@@ -175,18 +171,21 @@
       main { padding: 12px 18px 60px; }
       .hero { padding: 38px 0 34px; }
       .product { flex-direction: column; gap: 14px; }
-      header nav { gap: 14px; font-size: 13px; }
     }
   
-    .brand {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none; color: inherit;
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; flex: none; }
+    .brand:hover { text-decoration: none; opacity: .75; }
+    .crumb-sep { color: var(--ink-soft); opacity: .5; font-family: var(--font-ui); font-size: 15px; flex: none; }
+    .section-label {
+      font-family: var(--font-ui); font-size: 16px; font-weight: 600;
+      letter-spacing: -0.2px; color: var(--ink); flex: none;
     }
-    .brand:hover { text-decoration: none; }
-    .brand:hover .logo-name { color: var(--accent); }
-    .brand:hover .logo-mark, .brand:hover .logo-icon { opacity: .8; }
-  
-    @media (max-width: 620px) {
+    header nav { margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap;
+      font-family: var(--font-ui); font-size: 14.5px; font-weight: 500; }
+    header nav a { color: var(--ink-soft); text-decoration: none; }
+    header nav a:hover { color: var(--accent); text-decoration: none; }
+    header nav span.current { color: var(--ink); cursor: default; }
+    @media (max-width: 640px) {
       header { flex-wrap: wrap; row-gap: 10px; }
       header nav { gap: 14px; font-size: 13.5px; margin-left: 0; width: 100%; }
     }
@@ -199,18 +198,16 @@
     <img class="logo-mark" src="aquilink-logo.svg" alt="AquiLink">
   </a>
   <nav>
-    <a class="current" href="index.html">AquiLink</a>
     <a href="bodycheck.html">Body Check</a>
     <a href="bot.html">Bot</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
   </nav>
 </header>
 
 <main>
 
   <div class="hero">
-    <img class="hero-mark" src="aquilink-logo.svg" alt="AquiLink">
     <div class="eyebrow">Independent software studio · Portugal</div>
     <h1>Small software, made carefully.</h1>
     <p class="lede">AquiLink is a small independent studio in Figueira da Foz, Portugal. We build Body Check — a private health diary that keeps your records on your own device and asks for nothing in return.</p>
@@ -264,13 +261,12 @@
 </main>
 
 <footer>
-  <a href="bodycheck.html">Body Check</a> &nbsp;·&nbsp; <a href="support.html">Support</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a>
-
+  <a href="bodycheck.html">Body Check</a> &nbsp;&middot;&nbsp; <a href="bot.html">AquiLink Bot</a> &nbsp;&middot;&nbsp; <a href="index.html#contact">Contact</a>
   <div class="legal-block">
-    <strong>AquiLink</strong> — Igor Serdiukov<br>
-    Rua Cardoso Marta, n.º 18, 2.º Esq., 3080-012 Figueira da Foz, Portugal<br>
-    NIF 311241190 · +351 931 992 840 · <a href="mailto:support@aquilink.eu">support@aquilink.eu</a><br>
-    © 2026 AquiLink
+    <strong>AquiLink</strong> &mdash; Igor Serdiukov<br>
+    Rua Cardoso Marta, n.&ordm; 18, 2.&ordm; Esq., 3080-012 Figueira da Foz, Portugal<br>
+    NIF 311241190 &middot; <a href="mailto:support@aquilink.eu">support@aquilink.eu</a><br>
+    &copy; 2026 AquiLink
   </div>
 </footer>
 
