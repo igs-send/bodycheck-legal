@@ -149,7 +149,7 @@
     }
   
     header nav {
-      margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap;
+      margin-left: auto; display: flex; gap: 20px; flex-wrap: wrap; flex-wrap: wrap;
       font-family: var(--font-ui); font-size: 14.5px; font-weight: 500;
     }
     header nav a { color: var(--ink-soft); text-decoration: none; }
@@ -161,13 +161,28 @@
     }
     .legal-block strong { color: var(--ink); font-weight: 600; }
     @media (max-width: 560px) { header nav { gap: 13px; font-size: 13.5px; } }
+  
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; color: inherit;
+    }
+    .brand:hover { text-decoration: none; }
+    .brand:hover .logo-name { color: var(--accent); }
+    .brand:hover .logo-mark, .brand:hover .logo-icon { opacity: .8; }
+  
+    @media (max-width: 620px) {
+      header { flex-wrap: wrap; row-gap: 10px; }
+      header nav { gap: 14px; font-size: 13.5px; margin-left: 0; width: 100%; }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html"><img class="logo-icon" src="icon.png" alt="Body Check" width="32" height="32"></a>
-  <span class="logo-name">Body Check</span>
+  <a class="brand" href="bodycheck.html">
+    <img class="logo-icon" src="icon.png" alt="" width="32" height="32">
+    <span class="logo-name">Body Check</span>
+  </a>
   <nav>
     <a href="index.html">AquiLink</a>
     <a href="bodycheck.html">Body Check</a>
