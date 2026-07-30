@@ -151,6 +151,8 @@
     .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; flex: none; }
     .brand:hover { text-decoration: none; opacity: .75; }
     .crumb-sep { color: var(--ink-soft); opacity: .5; font-family: var(--font-ui); font-size: 15px; flex: none; }
+    a.section-label { text-decoration: none; }
+    a.section-label:hover { color: var(--accent); text-decoration: none; }
     .section-label {
       display: flex; align-items: center; gap: 8px;
       font-family: var(--font-ui); font-size: 16px; font-weight: 600;
@@ -177,11 +179,10 @@
     <img class="logo-mark" src="aquilink-logo.svg" alt="AquiLink">
   </a>
   <span class="crumb-sep">/</span>
-  <span class="section-label">
+  <a class="section-label" href="bodycheck.html">
     <img src="icon.png" alt="" width="24" height="24">Body Check
-  </span>
+  </a>
   <nav>
-    <a href="bodycheck.html">Overview</a>
     <span class="current">Support</span>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
