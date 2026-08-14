@@ -174,10 +174,17 @@
   
     .made-by { margin: 14px 0 0; font-size: 13.5px; }
   
-    .coming-soon {
-      font-family: var(--font-ui); font-size: 14.5px; font-weight: 600;
-      color: var(--accent); margin: 0;
+    .store-links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; margin: 4px 0 0;
     }
+    .store-btn {
+      font-family: var(--font-ui); font-size: 14.5px; font-weight: 600;
+      color: var(--surface); background: var(--ink);
+      padding: 12px 22px; border-radius: 999px; text-decoration: none;
+      border: 1px solid var(--ink); transition: opacity 0.15s ease;
+    }
+    .store-btn:hover { opacity: 0.85; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -203,7 +210,10 @@
     <div class="eyebrow">Health diary &amp; body map</div>
     <h1>Your health, mapped.</h1>
     <p class="lede">Body Check is a private, offline health diary built around a visual body map. Note how you feel and see it right on your body — no account needed.</p>
-    <p class="coming-soon">Coming soon.</p>
+    <div class="store-links">
+      <a class="store-btn" href="https://apps.apple.com/app/id6785216147">Download on the App Store</a>
+      <a class="store-btn" href="https://play.google.com/store/apps/details?id=io.bodycheck.app">Get it on Google Play</a>
+    </div>
   
   </div>
 
@@ -278,7 +288,6 @@
   <p class="made-by">Body Check is made by <a href="index.html">AquiLink</a>.</p>
   <div class="legal-block">
     <strong>AquiLink</strong> &mdash; Igor Serdiukov<br>
-    Rua Cardoso Marta, n.&ordm; 18, 2.&ordm; Esq., 3080-012 Figueira da Foz, Portugal<br>
     NIF 311241190 &middot; <a href="mailto:support@aquilink.eu">support@aquilink.eu</a><br>
     &copy; 2026 AquiLink
   </div>
