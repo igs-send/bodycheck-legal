@@ -212,8 +212,8 @@
     <h1>Your health, mapped.</h1>
     <p class="lede">Body Check is a private, offline health diary built around a visual body map. Note how you feel and see it right on your body — no account needed.</p>
     <div class="store-links">
-      <a class="store-btn" href="https://apps.apple.com/app/id6785216147">Download on the App Store</a>
-      <a class="store-btn" href="https://play.google.com/store/apps/details?id=io.bodycheck.app">Get it on Google Play</a>
+      <a id="app-store-link" class="store-btn" href="https://apps.apple.com/app/apple-store/id6785216147?pt=129097231&amp;ct=website_main&amp;mt=8">Download on the App Store</a>
+      <a id="google-play-link" class="store-btn" href="https://play.google.com/store/apps/details?id=io.bodycheck.app&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Downed_web%26utm_campaign%3Dalways_on">Get it on Google Play</a>
     </div>
   
   </div>
@@ -293,6 +293,80 @@
     &copy; 2026 AquiLink
   </div>
 </footer>
+
+<script>
+  (() => {
+    const appStoreLink = document.getElementById('app-store-link');
+    const googlePlayLink = document.getElementById('google-play-link');
+
+    // The tagged links in the HTML remain valid if this script is unavailable.
+    if (!appStoreLink || !googlePlayLink) return;
+
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const sanitize = (value, fallback, maxLength) => {
+        const cleaned = String(value || '')
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9._-]+/g, '_')
+          .replace(/^_+|_+$/g, '')
+          .slice(0, maxLength);
+        return cleaned || fallback;
+      };
+
+      let sourceValue = params.get('utm_source') || params.get('src') || '';
+
+      // Use the external referrer only when no explicit source was supplied.
+      if (!sourceValue && document.referrer) {
+        try {
+          const referrer = new URL(document.referrer);
+          if (referrer.hostname && referrer.hostname !== window.location.hostname) {
+            sourceValue = referrer.hostname.replace(/^www\./, '');
+          }
+        } catch (_) {
+          // Ignore malformed or unavailable referrers.
+        }
+      }
+
+      const source = sanitize(sourceValue, 'website', 50);
+      const medium = sanitize(
+        params.get('utm_medium'),
+        source === 'website' ? 'owned_web' : 'referral',
+        50
+      );
+      const campaign = sanitize(
+        params.get('utm_campaign'),
+        source === 'website' ? 'always_on' : 'website_referral',
+        80
+      );
+
+      const appStoreCampaign = source === 'website'
+        ? 'website_main'
+        : sanitize(`website_${source}`, 'website_main', 40);
+
+      const appStoreUrl = new URL('https://apps.apple.com/app/apple-store/id6785216147');
+      appStoreUrl.searchParams.set('pt', '129097231');
+      appStoreUrl.searchParams.set('ct', appStoreCampaign);
+      appStoreUrl.searchParams.set('mt', '8');
+
+      const installReferrer = new URLSearchParams({
+        utm_source: source,
+        utm_medium: medium,
+        utm_campaign: campaign
+      });
+      const googlePlayUrl = new URL('https://play.google.com/store/apps/details');
+      googlePlayUrl.searchParams.set('id', 'io.bodycheck.app');
+      googlePlayUrl.searchParams.set('referrer', installReferrer.toString());
+
+      appStoreLink.href = appStoreUrl.toString();
+      googlePlayLink.href = googlePlayUrl.toString();
+      appStoreLink.dataset.attributionSource = source;
+      googlePlayLink.dataset.attributionSource = source;
+    } catch (_) {
+      // Keep the static, tagged store links if attribution setup fails.
+    }
+  })();
+</script>
 
 </body>
 </html>
